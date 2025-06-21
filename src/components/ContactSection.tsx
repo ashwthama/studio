@@ -25,7 +25,7 @@ export default function ContactSection() {
               <Phone className="h-6 w-6 text-primary group-hover:text-accent transition-colors" />
               <span className="text-lg">+91 8081652700</span>
             </a>
-            <a href="https://www.linkedin.com/in/ashwani-kumar-a19395137/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
+            <a href="https://www.linkedin.com/in/ashwani-kumar-2a33651b3/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors group">
               <Linkedin className="h-6 w-6 text-primary group-hover:text-accent transition-colors" />
               <span className="text-lg">LinkedIn Profile</span>
             </a>

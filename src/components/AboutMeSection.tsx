@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import profile from '@/assets/images/ashu-profile.jpg';
 import AnimatedSection from './AnimatedSection';
 
 export default function AboutMeSection() {
@@ -14,7 +15,7 @@ export default function AboutMeSection() {
           <div className="md:w-1/3 flex-shrink-0">
             <div className="relative aspect-square w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden shadow-xl border-4 border-primary">
               <Image
-                src="https://placehold.co/300x300.png"
+                src={profile}
                 alt="Ashwani Kumar Profile Photo"
                 layout="fill"
                 objectFit="cover"
