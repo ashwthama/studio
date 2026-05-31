@@ -38,10 +38,10 @@ export async function handleContactSubmit(
   }
 
   const { name, email, message } = validatedFields.data;
-  const smtpHost = process.env.SMTP_HOST;
+  const smtpHost = process.env.SMTP_HOST??'smtp.gmail.com';
   const smtpPort = Number(process.env.SMTP_PORT ?? 587);
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPassword = process.env.SMTP_PASSWORD;
+  const smtpUser = process.env.SMTP_USER??'ashwanikumarnt@gmail.com';
+  const smtpPassword = process.env.SMTP_PASSWORD ??'zeff slbo kkto qgpn';
   const smtpFrom = process.env.SMTP_FROM ?? smtpUser;
   const smtpTo = process.env.SMTP_TO ?? 'ashwanikumarnt@gmail.com';
 
