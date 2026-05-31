@@ -25,13 +25,13 @@ export default function AboutMeSection() {
           </div>
           <div className="md:w-2/3 text-lg text-foreground/90 space-y-4 text-center md:text-left">
             <p>
-              Hello! I&apos;m Ashwani Kumar, a results-driven Full-Stack Developer currently contributing my skills at smartData Enterprises. My journey in tech has been fueled by a passion for crafting efficient, scalable, and user-centric software solutions.
+              Hello! I&apos;m Ashwani Kumar, a Full-Stack .NET Developer at smartData Enterprises Inc., focused on building scalable enterprise applications for the insurance domain.
             </p>
             <p>
-              With hands-on experience in Microservices architecture, I thrive on designing and implementing complex systems that are both robust and maintainable. I have a strong background in leveraging Azure cloud services to build and deploy applications, ensuring high availability and performance.
+              My hands-on experience includes ASP.NET Core, C#, Angular, SQL Server, MongoDB, Microservices architecture, REST APIs, RabbitMQ, Azure Cloud, and Jenkins-based CI/CD pipelines. I have designed and maintained 20+ microservices, migrated services to Microsoft Azure, and optimized application workflows for better performance.
             </p>
             <p>
-              I&apos;m adept at the full software development lifecycle, from conceptualization and design through to development, testing, and deployment. I enjoy tackling challenging problems and continuously learning new technologies to stay at the forefront of enterprise-level software delivery.
+              I also work with AI-enabled applications, including OpenAI APIs, LLM-based data extraction, prompt engineering, and AI-driven matching and verification. Alongside development, I collaborate directly with clients on requirements, solution design, project delivery, and offshore development coordination.
             </p>
           </div>
         </div>

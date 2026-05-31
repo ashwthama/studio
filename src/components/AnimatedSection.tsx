@@ -7,12 +7,18 @@ interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
   id?: string;
-  as?: keyof JSX.IntrinsicElements; // Allows specifying the HTML tag
+  as?: React.ElementType;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className, id, as: Tag = 'section' }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const Component = Tag as React.ElementType<{
+    children: React.ReactNode;
+    className?: string;
+    id?: string;
+    ref?: React.Ref<HTMLElement>;
+  }>;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -41,13 +47,13 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className, 
   }, []);
 
   return (
-    <Tag
+    <Component
       id={id}
       ref={sectionRef}
       className={`${className || ''} fade-in-up ${isVisible ? 'visible' : ''}`}
     >
       {children}
-    </Tag>
+    </Component>
   );
 };
 

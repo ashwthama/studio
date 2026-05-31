@@ -1,13 +1,39 @@
 import SkillItem from './SkillItem';
 import AnimatedSection from './AnimatedSection';
-import { ServerCog, FileCode2, Atom, Type, LayoutPanelLeft, Database, DatabaseZap, Cloud, Construction, MessageSquare, DatabaseBackup } from 'lucide-react';
+import {
+  ServerCog,
+  FileCode2,
+  Atom,
+  Type,
+  LayoutPanelLeft,
+  Database,
+  DatabaseZap,
+  Cloud,
+  Construction,
+  MessageSquare,
+  DatabaseBackup,
+  Braces,
+  GitBranch,
+  Send,
+  Bot,
+  BrainCircuit,
+  Workflow,
+  Network,
+  ShieldCheck,
+  Settings,
+} from 'lucide-react';
 
 const skillCategories = [
   {
     title: 'Backend',
     skills: [
+      { name: 'ASP.NET Core', Icon: ServerCog },
       { name: '.NET Core', Icon: ServerCog },
       { name: 'C#', Icon: FileCode2 },
+      { name: 'REST APIs', Icon: Braces },
+      { name: 'Microservices', Icon: Network },
+      { name: 'Clean Architecture', Icon: Workflow },
+      { name: 'Entity Framework Core', Icon: DatabaseBackup },
     ],
   },
   {
@@ -15,6 +41,7 @@ const skillCategories = [
     skills: [
       { name: 'Angular 12-19', Icon: Atom },
       { name: 'TypeScript', Icon: Type },
+      { name: 'JavaScript', Icon: Braces },
       { name: 'Bootstrap', Icon: LayoutPanelLeft },
     ],
   },
@@ -26,12 +53,27 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Others',
+    title: 'Cloud, DevOps & Tools',
     skills: [
       { name: 'Azure', Icon: Cloud },
       { name: 'Jenkins', Icon: Construction },
+      { name: 'CI/CD', Icon: Workflow },
       { name: 'RabbitMQ', Icon: MessageSquare },
-      { name: 'Entity Framework', Icon: DatabaseBackup },
+      { name: 'Git', Icon: GitBranch },
+      { name: 'Postman', Icon: Send },
+      { name: 'Swagger', Icon: Braces },
+      { name: 'Consul', Icon: Settings },
+      { name: 'HashiCorp Vault', Icon: ShieldCheck },
+      { name: 'Agile Scrum', Icon: Workflow },
+    ],
+  },
+  {
+    title: 'AI & OpenAI',
+    skills: [
+      { name: 'OpenAI API', Icon: Bot },
+      { name: 'LLMs', Icon: BrainCircuit },
+      { name: 'Prompt Engineering', Icon: MessageSquare },
+      { name: 'AI Data Extraction', Icon: DatabaseZap },
     ],
   },
 ];
@@ -45,7 +87,7 @@ export default function SkillsSection() {
             Technical Skills
           </h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
-            A snapshot of the technologies and tools I leverage to build robust and efficient applications.
+            ATS-friendly overview of the technologies, tools, and AI capabilities listed in my resume.
           </p>
         </div>
         <div className="space-y-10">

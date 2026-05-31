@@ -1,22 +1,49 @@
 import ProjectCard from './ProjectCard';
 import AnimatedSection from './AnimatedSection';
-import { Briefcase, ShieldCheck, CloudCog } from 'lucide-react';
+import { Briefcase, ShieldCheck, CloudCog, Bot } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Excess Platform',
-    description: 'A microservice-based insurance platform enabling users to compare carriers and purchase policies efficiently. Focused on backend robustness and scalability.',
+    title: 'Insurance Portal',
+    description: "Insurance portal for General Liability, Cyber, Excess, Workers' Compensation, and Inland Marine policies.",
+    highlights: [
+      'Developed and maintained enterprise insurance applications using ASP.NET Core, C#, Angular, SQL Server, and MongoDB.',
+      'Designed and implemented microservices-based solutions for insurance domain applications.',
+    ],
+    techStack: ['ASP.NET Core', 'Angular', 'REST APIs', 'SQL Server', 'MongoDB'],
     Icon: Briefcase,
   },
   {
-    title: 'Cyber IT Platform',
-    description: 'Developed a specialized platform to help users understand and purchase cybersecurity policies, simplifying a complex insurance domain.',
+    title: 'Multi-Carrier Excess Insurance Platform',
+    description: 'Platform for comparing and purchasing Excess insurance policies across multiple carriers.',
+    highlights: [
+      'Supported policy comparison and purchase workflows in a microservices-based insurance ecosystem.',
+      'Collaborated directly with clients for requirement gathering, solution design, and project delivery.',
+    ],
+    techStack: ['ASP.NET Core', 'Angular', 'Microservices', 'REST APIs'],
     Icon: ShieldCheck,
   },
   {
     title: 'Azure Migration Project',
-    description: 'Successfully led and executed the migration of all existing services to Azure cloud infrastructure, resulting in a 40% improvement in scalability and operational efficiency.',
+    description: 'Microservices modernization and performance enhancement initiative using Microsoft Azure.',
+    highlights: [
+      'Migrated existing microservices to Microsoft Azure, improving system scalability and performance by 40%.',
+      'Implemented Jenkins CI/CD pipelines for automated deployments.',
+    ],
+    techStack: ['Azure', 'Microservices', 'Jenkins', 'CI/CD'],
     Icon: CloudCog,
+  },
+  {
+    title: 'AI-Powered Business Intelligence Platform',
+    description: 'AI-powered application for extracting and enriching business information from company name and address.',
+    highlights: [
+      'Retrieved website URLs, social media profiles, contact details, and business descriptions from public sources.',
+      'Integrated LLMs for intelligent data extraction and validation.',
+      'Leveraged OpenAI APIs and prompt engineering techniques for business data enrichment.',
+      'Improved data accuracy through AI-driven matching and verification.',
+    ],
+    techStack: ['ASP.NET Core', 'Angular', 'OpenAI API', 'MongoDB', 'Prompt Engineering'],
+    Icon: Bot,
   },
 ];
 
@@ -29,15 +56,17 @@ export default function ProjectsSection() {
             Key Projects
           </h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
-            Here are some of the significant projects I&apos;ve worked on, demonstrating my capabilities in building impactful solutions.
+            Resume-backed projects across insurance platforms, microservices modernization, Azure migration, and AI/OpenAI-enabled business intelligence.
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <ProjectCard
               key={project.title}
               title={project.title}
               description={project.description}
+              highlights={project.highlights}
+              techStack={project.techStack}
               Icon={project.Icon}
             />
           ))}

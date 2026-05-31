@@ -13,7 +13,7 @@ export default function HeroSection() {
             Hi, I&apos;m Ashwani Kumar
           </h2>
           <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-foreground/80">
-            A passionate Full-Stack Developer with experience in building scalable microservices and cloud-based applications using .NET Core, Angular, and Azure.
+            Full-Stack .NET Developer with 3+ years of experience building scalable enterprise applications using ASP.NET Core, C#, Angular, SQL Server, MongoDB, Microservices, REST APIs, Azure, RabbitMQ, and Jenkins CI/CD.
           </p>
           <div className="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             {/* <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground">
@@ -23,7 +23,7 @@ export default function HeroSection() {
               </a>
             </Button> */}
             <Button asChild size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground">
-  <a href="/files/resume.pdf" target="_blank" download="Ashwani_Kumar_Resume.pdf">
+  <a href="/files/Ashwani_Kumar_DotNet_FullStack_Developer.pdf" target="_blank" download="Ashwani_Kumar_DotNet_FullStack_Developer.pdf">
     <Download className="mr-2 h-5 w-5" />
     Download Resume
   </a>

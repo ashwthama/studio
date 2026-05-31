@@ -11,7 +11,7 @@ export default function ContactSection() {
             Get In Touch
           </h2>
           <p className="mt-4 text-lg text-foreground/80 max-w-2xl mx-auto">
-            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+            I&apos;m open to full-stack .NET, Angular, Azure, microservices, insurance-domain, and AI/OpenAI-enabled application opportunities.
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
@@ -30,7 +30,7 @@ export default function ContactSection() {
               <span className="text-lg">LinkedIn Profile</span>
             </a>
             <p className="text-foreground/70 mt-4">
-              Feel free to reach out via email, phone, or connect with me on LinkedIn. I look forward to hearing from you!
+              Feel free to reach out via email, phone, or LinkedIn for relevant engineering opportunities or project discussions.
             </p>
           </div>
           <div className="bg-card p-8 rounded-lg shadow-lg">

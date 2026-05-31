@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import AboutMeSection from '@/components/AboutMeSection';
+import ImpactHighlightsSection from '@/components/ImpactHighlightsSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SkillsSection from '@/components/SkillsSection';
 import CertificationsSection from '@/components/CertificationsSection';
@@ -14,6 +15,7 @@ export default function HomePage() {
       <main className="flex-grow">
         <HeroSection />
         <AboutMeSection />
+        <ImpactHighlightsSection />
         <ProjectsSection />
         <SkillsSection />
         <CertificationsSection />
