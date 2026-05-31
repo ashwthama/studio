@@ -1,5 +1,6 @@
 "use server";
 
+import nodemailer from 'nodemailer';
 import { z } from 'zod';
 
 const contactSchema = z.object({
@@ -36,12 +37,72 @@ export async function handleContactSubmit(
     };
   }
 
-  // In a real application, you would send an email or save to a database here.
-  // For this example, we'll just simulate success.
-  console.log("Contact form submitted:", validatedFields.data);
+  const { name, email, message } = validatedFields.data;
+  const smtpHost = process.env.SMTP_HOST;
+  const smtpPort = Number(process.env.SMTP_PORT ?? 587);
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPassword = process.env.SMTP_PASSWORD;
+  const smtpFrom = process.env.SMTP_FROM ?? smtpUser;
+  const smtpTo = process.env.SMTP_TO ?? 'ashwanikumarnt@gmail.com';
+
+  if (!smtpHost || !smtpUser || !smtpPassword || !smtpFrom) {
+    return {
+      message: "SMTP is not configured yet. Please set SMTP_HOST, SMTP_USER, SMTP_PASSWORD, and SMTP_FROM.",
+      success: false,
+    };
+  }
+
+  try {
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpPort === 465,
+      auth: {
+        user: smtpUser,
+        pass: smtpPassword,
+      },
+    });
+
+    await transporter.sendMail({
+      from: smtpFrom,
+      to: smtpTo,
+      replyTo: email,
+      subject: `Portfolio contact message from ${name}`,
+      text: [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        '',
+        'Message:',
+        message,
+      ].join('\n'),
+      html: `
+        <h2>New portfolio contact message</h2>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Message:</strong></p>
+        <p>${escapeHtml(message).replace(/\n/g, '<br />')}</p>
+      `,
+    });
+  } catch (error) {
+    console.error("Failed to send contact email:", error);
+
+    return {
+      message: "Failed to send message right now. Please try again later or email me directly.",
+      success: false,
+    };
+  }
 
   return {
     message: "Thank you for your message! I'll get back to you soon.",
     success: true,
   };
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
